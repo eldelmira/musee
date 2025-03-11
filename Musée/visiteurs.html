@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exposition Virtuelle du Louvre</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; }
+        header { background: #222; color: teal; padding: 10px; text-align: center; }
+        .info { text-align: center; padding: 10px; }
+    </style>
+</head>
+<body>
+    <header>Exposition Virtuelle du Louvre</header>
+    <div class="info">Cliquez sur les œuvres pour en savoir plus.</div>
+    <br>
+    <button><a href="index.html" style="text-decoration: none;">Retour</a></button>
+    <a-scene>
+        <a-assets>
+            <img id="mona-lisa" src="image1.jpg">
+            <img id="venus-de-milo" src="image2.jpg">
+            <img id="winged-victory" src="image3.jpg">
+        </a-assets>
+        <a-sky color="black"></a-sky>
+        <a-plane position="0 0 -4" rotation="-90 0 0" width="10" height="10" color="white"></a-plane>
+        <a-image src="image1.jpg" position="-2 1 -3" width="1.5" height="2" onclick="showInfo('La Joconde', 'Peinte par Léonard de Vinci au début du 16ème siècle.')"></a-image>
+        <a-image src="image2.jpg" position="0 1 -3" width="1.5" height="2" onclick="showInfo('Vénus de Milo', 'Sculpture grecque antique datant d\'environ 100 av. J.-C.')"></a-image>
+        <a-image src="image3.jpg" position="2 1 -3" width="1.5" height="2" onclick="showInfo('Victoire de Samothrace', 'Sculpture hellénistique du 2ème siècle av. J.-C.')"></a-image>
+    </a-scene>
+    <script>
+        function showInfo(title, description) {
+            alert(title + '\\n' + description);
+        }
+    </script>
+
+
+</body>
+</html>
